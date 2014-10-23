@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <!-- BEGIN HEAD -->
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=ISO-8859-1" />
+  <meta charset="ISO-8859-1">
+  <title>Exemplo aplicação com JS e REST</title>
+  <!-- CSS -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- JS: Angular.JS -->
+<script src="js/angular/angular.js"></script>
+<script src="js/angular/i18n/angular-locale_pt-br.js"></script>
+  <!-- JS: Aplicação de exemplo -->
+  <!-- <script src="js/app-exemplo/ng-really.js"></script> </head> -->
+  <script src="js/app-exemplo/clienteController.js"></script> </head>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body data-ng-app="exemplo">
+  <div ng-controller="clienteController">
+    <div class="col-lg-12">
+
+<h4>Lista de clientes</h4>
+<table class="table table-striped table-hover">
+  <thead> <tr> <th>Nome</th>
+    <th>e-mail</th>
+    <th>Renda</th>
+    <th></th>
+  </tr> </thead>
+  <tbody> <tr data-ng-repeat="cliente in clientes | orderBy:'nome'">
+    <td><a href="cliente/{{cliente.id}}">{{cliente.nome}}</a></td>
+    <td>{{cliente.email}}</td>
+    <td>{{cliente.renda}}</td>
+    <td>
+<!--      <input type="button" data-ng-click="excluirCliente(cliente)" value="x" />  -->
+<!--    	<input type="button" ng-really ng-really-message="Are you sure?" ng-really-click="excluirCliente(cliente)" value="x" />  -->
+
+    <button confirmed-click="excluirCliente(cliente)" ng-confirm-click="Tem certeza que deseja excluir o cadastro do cliente '{{cliente.nome}}'?">x</button>
+
+    </td>
+</tr> </tbody> </table>
+
+  <div class="bg-danger">{{resultado}}
+  </div>
+
+  </div>
+</body>
+</html>
