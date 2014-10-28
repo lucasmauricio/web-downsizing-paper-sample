@@ -1,6 +1,29 @@
 'use strict';
 
-var app = angular.module('exemplo', []).controller('clienteController', function($scope, $http){
+var app = angular.module('exemplo', ['ngRoute']);
+
+
+app.config(function($routeProvider) {
+
+  $routeProvider.
+    when('/clientes', {
+      templateUrl: 'cliente-GET.html',
+      controller: 'clienteController'
+    }).
+    when('/novo-cliente', {
+      templateUrl: 'cliente-POST.html',
+      controller: 'clienteController'
+    }).
+    otherwise({
+      templateUrl: 'opcoes.html',
+      controller: 'clienteController'
+//      redirectTo: '/index.html'
+    })
+
+});
+
+
+app.controller('clienteController', function($scope, $http) {
 
 	$scope.mensagem_erro = '';
      $scope.resultado = '';
