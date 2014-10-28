@@ -21,7 +21,7 @@ app.config(function($routeProvider, $locationProvider) {
       controller: 'clienteController'
     }).
     otherwise({
-      templateUrl: 'opcoes.html',
+      templateUrl: 'inicio.html',
       controller: 'clienteController'
 //      redirectTo: '/index.html'
     })
