@@ -1,31 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <!-- BEGIN HEAD -->
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=ISO-8859-1" />
-  <meta charset="ISO-8859-1">
-  <title>Exemplo aplicação com JS e REST</title>
-  <!-- CSS -->
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- JS: Angular.JS -->
-  <script src="js/angular/angular.js"></script>
-  <script src="js/angular/i18n/angular-locale_pt-br.js"></script>
-  <!-- JS: Aplicação de exemplo -->
-  <script src="js/app-exemplo/clienteController.js"></script>
-</head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
-<body data-ng-app="exemplo">
-  <div ng-controller="clienteController">
-    <div class="col-lg-3">
-  <div class="row" ng-show="!cliente">
-      Buscar cliente por ID:    <input type="text" ng-model="idCliente">
-      <button type="submit" class="btn" ng-disabled="!idCliente" ng-click="carregarDadosCliente(idCliente)">Carregar dados do cliente</button> </div>
-  </div>
 
-    <div class="col-lg-12">
-      <h4>Atualizar cadastro do cliente</h4>
+<div class="col-lg-3">
+
+<div class="col-lg-12">
+  <h4>Atualizar cadastro do cliente</h4>
 
 <form role="form">
   <div class="form-group">
@@ -44,7 +21,7 @@
   <div class="form-group col-xs-10">
     <label for="inputFaixaSalarial1">Renda</label>
     <select class="form-control" id="inputFaixaSalarial1" ng-model="cliente.renda">
-      <option>até R$ 999,99</option>
+      <option>atÃ© R$ 999,99</option>
       <option>entre R$ 1.000,00 e R$ 4.999,99</option>
       <option>entre R$ 5.000,00 e R$ 9.999,99</option>
       <option>acima de R$ 10.000,00</option>
@@ -53,13 +30,11 @@
 
   </div>
 
-  <button type="submit" class="btn btn-default btn-primary" ng-click="atualizarCadastroCliente(cliente)">Salvar alteração de cadastro</button>
-  <button type="reset" class="btn active">Cancelar alterações</button>
+  <button type="submit" class="btn btn-default btn-primary" ng-click="atualizarCadastroCliente(cliente)">Salvar alteraÃ§Ã£o de cadastro</button>
+  <button type="reset" class="btn active">Cancelar alteraÃ§Ãµes</button>
 </form>
 
   <div class="bg-danger">{{resultado}}
   </div>
 
-  </div>
-</body>
-</html>
+</div>
