@@ -13,11 +13,7 @@
     <td>{{cliente.email}}</td>
     <td>{{cliente.renda}}</td>
     <td>
-<!--      <input type="button" data-ng-click="excluirCliente(cliente)" value="x" />  -->
-<!--    	<input type="button" ng-really ng-really-message="Are you sure?" ng-really-click="excluirCliente(cliente)" value="x" />  -->
-
-    <button confirmed-click="excluirCliente(cliente)" ng-confirm-click="Tem certeza que deseja excluir o cadastro do cliente '{{cliente.nome}}'?">x</button>
-
+      <button confirmed-click="excluirCliente(cliente)" ng-confirm-click="Tem certeza que deseja excluir o cadastro do cliente '{{cliente.nome}}'?">x</button>
     </td>
 </tr> </tbody>
 </table>
