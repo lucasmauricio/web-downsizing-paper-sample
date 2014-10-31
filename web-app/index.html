@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html language="pt-br">
+<html language="pt-br" ng-app="artigoDonwsizingExemploApp">
   <!-- BEGIN HEAD -->
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -14,36 +14,52 @@
   <script src="js/angular/angular-route.js"></script>
   <script src="js/angular/i18n/angular-locale_pt-br.js"></script>
   <!-- JS: Aplicação de exemplo -->
-  <script src="js/app-exemplo/clienteController.js"></script> 
+  <script src="js/app-exemplo/clienteController.js"></script>
+
+  <!-- TODO: descobrir uma forma de deixar isso parametrizável ou autoconfigurável -->
+  <base href="/web-app/"></base>
 </head>
 <!-- END HEAD -->
 
 <!-- BEGIN BODY -->
-<body data-ng-app="exemplo">
+<body>
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-
+  <!-- HEADER AND NAVBAR -->
+  <header>
+    <nav class="navbar navbar-default" role="navigation">
       <div class="container">
-        <h3 class="navbar-header">Exemplo de aplicação: JS + REST</h3>
+        <div class="navbar-header">
+          <a href="#/" class="navbar-brand">Exemplo de aplicação: JS + REST</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#/"><i class="fa fa-home"></i>  HOME</a></li>
+          <li><a href="#/">Clientes</a></li>
+        </ul>
       </div>
 
       <div class="container">
         <ol class="breadcrumb">
-          <li class="navbar-text"><a href="#/" class="navbar-link">Início</a></p>
+          <li class="navbar-text"><a href="#/" class="navbar-link">Início</a></li>
         </ol>
       </div>
+    </nav>
+  </header>
 
-    </div>
-  </nav>
+
 
   <!-- mensagens do sistema -->
   <div class="bg-danger">{{resultado}}
   </div>
 
-  <div class="container">
+
+
+
+  <div id="main" class="container">
+
   <div ng-view>
   </div>  
+
   </div>  
 
 

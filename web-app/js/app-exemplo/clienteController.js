@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('exemplo', ['ngRoute']);
+var app = angular.module('artigoDonwsizingExemploApp', ['ngRoute']);
 
 
 app.config(function($routeProvider, $locationProvider) {
@@ -22,11 +22,16 @@ app.config(function($routeProvider, $locationProvider) {
     }).
     otherwise({
       templateUrl: 'inicio.html',
-      controller: 'clienteController'
+      controller: 'principalController'
 //      redirectTo: '/index.html'
     })
 
 });
+
+
+app.controller('principalController', function($scope) {
+  $scope.message = "Everyone come and see how good it looks!"
+})
 
 
 app.controller('clienteController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
